@@ -85,6 +85,7 @@ st.sidebar.markdown("""
     - [Introduction](#introduction)
     - [Projects](#projects)
     - [Skills](#skills)
+    - [AI Buddy](#ai-buddy)
     - [Let's Connect](#connect)
 """, unsafe_allow_html=True)
 st.sidebar.markdown("---")
@@ -163,7 +164,6 @@ with st.container():
         """)
 
 # Skills Section
-# Skills Section
 st.markdown('<h2 id="skills" class="section">Skills</h2>', unsafe_allow_html=True)
 add_color_bar()
 
@@ -180,6 +180,10 @@ with st.container():
     with col2:
         st.lottie(lottie_skills, speed=1, height=250, key="skills_animation")
 
+# AI Buddy Section
+st.markdown('<h2 id="ai-buddy" class="section">AI Buddy</h2>', unsafe_allow_html=True)
+add_color_bar()
+st.write(""" To know more about me, interact with my AI Buddy, a chatbot designed to answer your questions and provide insights about my work and experiences""")
 
 # Contact Section
 st.markdown('<h2 id="connect" class="section">Let\'s Connect</h2>', unsafe_allow_html=True)
