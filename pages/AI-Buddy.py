@@ -1,7 +1,5 @@
-import os
 import streamlit as st
 from streamlit_lottie import st_lottie
-from dotenv import load_dotenv
 
 # Import LangChain components - using try/except for better error handling
 try:
@@ -16,10 +14,9 @@ except ImportError:
 # Module for configuration and setup
 def initialize_config():
     """Initialize configuration and environment variables"""
-    load_dotenv()
     
     # Check if API key is available
-    if not os.getenv("GROQ_API_KEY"):
+    if not st.secrets.api_keys.GROQ_API_KEY:
         st.error("Missing GROQ_API_KEY in environment variables")
         st.stop()
     
@@ -106,14 +103,14 @@ def setup_llm_chain():
     - Actively exploring Retrieval-Augmented Generation (RAG) and Large Language Models (LLMs) to deepen expertise in generative AI.
 
     Open to opportunities in AI/ML Research, Data Science, and AI Engineering, with a strong inclination toward solving real-world problems using innovative machine learning techniques.
-
+    If someone wants to connect with me or meet me, provide them me contact details and ask them to reach out to me on LinkedIn or email. Do not say that you will notify me
     Always respond professionally and concisely, as you may be addressing potential recruiters. Do not respond to any personal questions or queries unrelated to Daksh's portfolio. Always be polite and respectful in your responses. Do not say made up things. Always be factually correct. 
     """
     
     # Initialize LLM with error handling
     try:
         llm = ChatGroq(
-            api_key=os.getenv("GROQ_API_KEY"), 
+            api_key=st.secrets.api_keys.GROQ_API_KEY,
             model="llama3-70b-8192"
         )
     except Exception as e:
